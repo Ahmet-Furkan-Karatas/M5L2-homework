@@ -55,16 +55,15 @@ class DB_Map():
 
     def create_graph(self, path, cities, color):
         ax = plt.axes(projection=ccrs.PlateCarree())
-        ax.set_global()  # Tüm dünya haritasını kapsa
+        ax.set_global() 
 
-        # 🌍 Arka plan (stok görsel yerine özel stil)
-        ax.add_feature(cfeature.LAND, facecolor='#d4b79f')  # Daha koyu toprak rengi
-        ax.add_feature(cfeature.OCEAN, facecolor='#A1C6EA')  # Açık mavi, soft görünüm
-        ax.add_feature(cfeature.BORDERS, linestyle=':', linewidth=0.8, edgecolor='#4C4C4C')  # Yumuşak sınır çizgisi
-        ax.add_feature(cfeature.COASTLINE, linewidth=0.8, edgecolor='#4C4C4C')  # Kara sınırları
-        ax.add_feature(cfeature.LAKES, edgecolor='#5577A1', facecolor='#A3C8D5', linewidth=0.4)  # Göller için yumuşak mavi
-        ax.add_feature(cfeature.RIVERS, edgecolor='#A1A1A1', linewidth=0.5)  # Nehirler için hafif gri ton
-        ax.add_feature(cfeature.STATES, linestyle='--', linewidth=0.4, edgecolor='#808080')  # Devlet sınırları
+        ax.add_feature(cfeature.LAND, facecolor='#d4b79f') 
+        ax.add_feature(cfeature.OCEAN, facecolor='#A1C6EA')  
+        ax.add_feature(cfeature.BORDERS, linestyle=':', linewidth=0.8, edgecolor='#4C4C4C') 
+        ax.add_feature(cfeature.COASTLINE, linewidth=0.8, edgecolor='#4C4C4C')
+        ax.add_feature(cfeature.LAKES, edgecolor='#5577A1', facecolor='#A3C8D5', linewidth=0.4) 
+        ax.add_feature(cfeature.RIVERS, edgecolor='#A1A1A1', linewidth=0.5) 
+        ax.add_feature(cfeature.STATES, linestyle='--', linewidth=0.4, edgecolor='#808080')  
         
         for city in cities:
             coordinates = self.get_coordinates(city)
